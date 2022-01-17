@@ -12,6 +12,7 @@ app.use(Express.json())
 // Controller Endpoints
 const controllers = require('./controllers')
 app.use('/user', controllers.userController)
+app.use(middleware.validateSession)
 app.use('/bug', controllers.bugController)
 app.use('/reply', controllers.replyController)
 

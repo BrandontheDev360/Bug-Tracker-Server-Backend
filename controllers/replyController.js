@@ -90,7 +90,7 @@ router.delete('/:id', validateSession, async (req, res) => {
 })
 
 // GET ALL REPLIES
-router.get('/all', validateSession, async (req, res) => {
+router.get('/all', async (req, res) => {
     try {
         const replies = await models.ReplyModel.findAll()
         res.status(200).json({
