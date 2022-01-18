@@ -29,8 +29,8 @@ router.post('/create', validateSession, async (req, res) => {
     }
 })
 
-// Get all Bugs based on users bearer token
-router.get('/all',validateSession, async (req, res) => {
+// Get all Bugs 
+router.get('/all', async (req, res) => {
     const { id } = req.user
     try {
         const allBugs = await models.BugModel.findAll({
